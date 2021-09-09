@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Renewing KendoReact License
+Every 30 days, do the following.
+
+* Sign up for a Telerik account
+* Apply for a KendoReact Trial
+* Download `kendo-ui-license.txt` and place it at project root
+* `yarn run kendo-ui-license activate`
