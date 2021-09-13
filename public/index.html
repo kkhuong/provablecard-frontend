@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>React Router Example</title>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <title>ProvableCard - Fair Blackjack Game</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="World's only provably fair online casino." />
+  <meta name="keywords"
+    content="ProvableCard, provable, fair, gaming, gambling, blackjack, black, jack, hash, seed, crypto, cryptocurrency, cryptocurrencies, currency, litecoin, bitcoin, ethereum" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,900,400italic,700italic:latin|Nunito:400,700:latin">
+
+  <style>
+    #root {
+      background-image: url("/assets/img/header-transparent.png"), linear-gradient(to right, rgb(131, 96, 195), rgb(46, 191, 145));
+    }
+
+    .ui.inverted.footer.segment {
+      background-color: #0c1428;
+      background-image: url("/assets/img/footer-pattern.png");
+      background-repeat: repeat;
+      background-attachment: fixed;
+      padding: 4em 0 4em 0;
+    }
+
+    .ui.inverted.footer.segment {
+      padding-top: 3em;
+    }
+
+    .gradient.segment {
+      position: relative;
+    }
+
+    .inverted.segment .ui.list>.item .header {
+      color: #fff;
+
+    }
+
+    .relaxed.segment {
+      padding: 0em 0em;
+      margin: 0;
+    }
+
+    .light.segment .ui.header {
+      font-weight: 400;
+    }
+
+    .light.segment h2.ui.header {
+      padding-bottom: 0
+    }
+
+    .light.segment h3 {
+      font-size: 2em;
+      padding-bottom: 0.25em;
+    }
+
+    .light.segment h4 {
+      font-size: 1.5em;
+      padding-bottom: 0.25em;
+    }
+
+    .light.segment p {
+      font-size: 17px;
+      color: rgba(0, 0, 0, 0.87);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Menu -->
+  <div class="ui top fixed inverted borderless nav following full menu">
+    <a class="centerlogo" href="/"><img src="/assets/img/logo.noback.svg" height="60" alt="Pokeit LLC"></a>
+    <div class="ui fluid container">
+      <div class="right menu">
+        <a class="item" href="instructions">How to Play</a>
+        <a class="item" href="rules">Rules</a>
+        <a class="item" href="fair">Provably Fair</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Content -->
+  <div id="root"></div>
+
+
+  <!-- Footer -->
+  <div class="ui vertical inverted footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+
+        <div class="five wide column">
+          <a class="" href="/"><img src="/assets/img/logo.noback.svg" height="60" alt="Pokeit LLC"></a>
+          <p style="font-size:0.85em;opacity:0.6">&copy;2021 ProvableCard LLC. All rights reserved.</p>
+        </div>
+
+        <div class="five wide column">
+          <h4 class="ui inverted header">Quick Links</h4>
+          <div class="ui inverted link list">
+            <a href="#" class="item">Frequently Asked Questions</a>
+            <a href="#" class="item">Terms &amp; Conditions</a>
+            <a href="#" class="item">The ProvableCard Team</a>
+            <a href="#" class="item">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="six wide column">
+          <h4 class="ui inverted header">About ProvableCard</h4>
+          <div class="ui list">
+            <p class="item" style="opacity:0.6">ProvableCard is a 100% fair and transparent Blackjack gaming website.
+              Decks are shuffled based on transaction id.</p>
+            <div class="item social-footer" style="text-align:right;">
+              <a href="https://www.facebook.com/USERNAME_FOR_FB" rel="noopener" target="_blank"
+                class="ui compact circular icon facebook button" title="Facebook">
+                <i class="facebook f icon"></i>
+              </a>
+              <a href="https://twitter.com/USERNAME_FOR_TWITTER" rel="noopener" target="_blank"
+                class="ui compact circular icon twitter button" title="Twitter">
+                <i class="twitter icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
 </html>
