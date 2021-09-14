@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import Hand from './Hand';
 import { Button, ButtonGroup } from "@progress/kendo-react-buttons";
+import {
+  Dialog,
+  DialogActionsBar
+} from "@progress/kendo-react-dialogs";
 
 import './Game.css';
 
 
 const Game = ({
+  initialBet = 0.0,
   legalActions,
   dealerHand,
   playerHand,
@@ -14,11 +19,20 @@ const Game = ({
   disabled = false
 }) => {
 
-  // const dealerHand = ['As', 'Kd'];
-  // const playerHand = ['3c', '8h'];
-  const handIsInProgress = !disabled;
-  // const legalActions = ['l', 'd', 'h', 's'];
+  const [visibleDialog, setVisibleDialog] = useState(false);
 
+
+  const toggleDialog = () => {
+    console.log("DIALOG TOGGLE");
+    setVisibleDialog(!visibleDialog);
+  };
+
+  const dialogAnswerYes = () => {
+    console.log("DIALOG YES");
+    toggleDialog();
+  }
+
+  const handIsInProgress = !disabled;
 
   const actionIsAvailable = (action) => {
     if (disabled) return false;
@@ -28,9 +42,29 @@ const Game = ({
 
   return (
     <>
+      {visibleDialog && (
+        <Dialog title={"Insurance Bet"} onClose={toggleDialog}>
+          <p
+            style={{
+              margin: "25px",
+              textAlign: "center",
+            }}
+          >
+            Need to be implemented!
+          </p>
+          <DialogActionsBar>
+            <button className="k-button" onClick={dialogAnswerYes}>
+              Confirm
+            </button>
+            <button className="k-button" onClick={toggleDialog}>
+              Cancel
+            </button>
+          </DialogActionsBar>
+        </Dialog>
+      )}
       <div className="game">
         &nbsp;
-        { dealerHand.length === 1 ? <Hand cards={[...dealerHand, 'brick']} /> : <Hand cards={dealerHand} /> }
+        {dealerHand.length === 1 ? <Hand cards={[...dealerHand, 'brick']} /> : <Hand cards={dealerHand} />}
         <div style={{ height: '200px', marginTop: '40px' }}>
           <div style={{ width: '100%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontWeight: 'bold', fontSize: '14px', letterSpacing: '1px', color: 'rgba(130, 134, 142, 1)' }}>
             <p>Blackjack Pays 3:2</p>
@@ -48,7 +82,7 @@ const Game = ({
           <Hand cards={playerHand} />
         </div>
       </div>
-      <div style={{ height: '50px', justifyContent: 'center', alignItems: 'center', display: 'flex'}}>
+      <div style={{ height: '50px', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
         <div>
           <div style={{ display: 'inline-block', marginRight: '20px' }}>
             <ButtonGroup>
@@ -72,6 +106,7 @@ const Game = ({
 };
 
 Game.propTypes = {
+  initialBet: PropTypes.number,
   legalActions: PropTypes.array,
   dealerHand: PropTypes.array,
   playerHand: PropTypes.array,

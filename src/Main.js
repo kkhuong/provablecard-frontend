@@ -10,9 +10,11 @@ const Main = () => {
 
   const [gameIsActive, setGameIsActive] = useState(false);
   const [handId, setHandId] = useState(0);
+  const [initialBet, setInitialBet] = useState(0.0);
   const [actionList, setActionList] = useState([]);
   const [dealerHandCards, setDealerHandCards] = useState([]);
   const [playerHandCards, setPlayerHandCards] = useState([]);
+
 
   const saveAPIResponseToStates = (res) => {
     setHandId(res['id']);
@@ -25,16 +27,14 @@ const Main = () => {
   }
 
   const placeBetAndStartGame = (currency, amount, address, txid) => {
-    console.log("CLICKED PLAY: ", currency, amount, address, txid);
-    console.log("CONFIG URL:", config['API_URL']);
+    setInitialBet(amount);
+
     const requestBody = {
       currency: currency,
       address: address,
       bet: amount,
       txid: txid
     };
-    console.log("CREATING A NEW HAND", requestBody);
-
     fetch(
       config['API_URL'],
       {
@@ -51,8 +51,7 @@ const Main = () => {
     }).catch(error => console.log("ERROR: ", error));
   }
 
-  const handleBJAction = (action, amount = 0) => {
-    // see if action is valid
+  const handleBJAction = (action, amount=0.0) => {
     if (!actionList.includes(action)) {
       throw new Error("Action " + action + " is invalid for hand #" + handId);
     }
@@ -83,7 +82,7 @@ const Main = () => {
   return (
     <div style={{ width: '100%', display: 'table' }}>
       <div style={{ display: 'table-row' }}>
-        <div style={{ minWidth: '480px', width: '80%', display: 'table-cell' }} className="trbox"><Game legalActions={actionList} dealerHand={dealerHandCards} playerHand={playerHandCards} onAction={handleBJAction} disabled={!gameIsActive} /></div>
+        <div style={{ minWidth: '480px', width: '80%', display: 'table-cell' }} className="trbox"><Game initialBet={initialBet} legalActions={actionList} dealerHand={dealerHandCards} playerHand={playerHandCards} onAction={handleBJAction} disabled={!gameIsActive} /></div>
         <div style={{ minWidth: '20px', width: '5%', display: 'table-cell' }} ></div>
         <div style={{ width: '15%', display: 'table-cell' }} className="trbox"><SendBet onSubmit={placeBetAndStartGame} disabled={gameIsActive} /></div>
       </div>

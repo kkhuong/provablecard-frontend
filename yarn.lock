@@ -1484,6 +1484,14 @@
     "@telerik/kendo-draggable" "^2.2.1"
     prop-types "^15.6.0"
 
+"@progress/kendo-react-common@4.9.0":
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-common/-/kendo-react-common-4.9.0.tgz#b32e6248c90312eb7f4ce0ed4b8988ab03e689b5"
+  integrity sha512-jImCfKrbaIFkQ3nGjGaRBEpG7dvvEWefy23ZJnfBcCSbuxSloV4cLdjlL1uYQ7eJtp96ozVTbZhol+AGLaS74w==
+  dependencies:
+    "@telerik/kendo-draggable" "^2.2.1"
+    prop-types "^15.6.0"
+
 "@progress/kendo-react-dateinputs@^4.8.0":
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/@progress/kendo-react-dateinputs/-/kendo-react-dateinputs-4.8.0.tgz#a83cb86ba5f0ca1746e1db589e232c596f20b2fd"
@@ -1494,6 +1502,14 @@
     "@progress/kendo-react-common" "4.8.0"
     "@progress/kendo-react-labels" "4.8.0"
     "@progress/kendo-react-popup" "4.8.0"
+    prop-types "^15.6.0"
+
+"@progress/kendo-react-dialogs@^4.9.0":
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-react-dialogs/-/kendo-react-dialogs-4.9.0.tgz#51bc75ecd6884f74af4644ae5c5e0e8e4a57785c"
+  integrity sha512-YaIkQuQ2bFV4jPYl+DQv4xUBne5LxUu2XOtWI7rGax4wj3r+IZ3S4/emi1kbMZHa5n+P7YcgiTKIuRAvtEDSPQ==
+  dependencies:
+    "@progress/kendo-react-common" "4.9.0"
     prop-types "^15.6.0"
 
 "@progress/kendo-react-intl@^4.8.0":

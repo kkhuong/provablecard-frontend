@@ -7,7 +7,7 @@ import './SendBet.css';
 
 const SendBet = ({
   onSubmit,
-  disabled = false
+  disabled=false
 }) => {
 
   const walletAddress = 'bitcoincash:qz9cq5r294syv3csh56e4jpyqrpt7gl9lcj7wveruw';
