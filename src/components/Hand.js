@@ -4,15 +4,16 @@ import Card from './Card';
 
 import './Hand.css';
 
+
 const Hand = ({
   cards
 }) => {
   return (
     <div style={{ display: 'flex', margin: 'auto' }} className='Hand'>
 
-        {cards.map((card) => {
-          return <Card string={card} />
-        })}
+      {cards.map((card, index) => {
+        return <Card string={card} key={index} />
+      })}
 
     </div>
   );

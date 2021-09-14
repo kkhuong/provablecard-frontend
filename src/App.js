@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
 import '@progress/kendo-theme-default/dist/all.css';
-import { Button } from "@progress/kendo-react-buttons";
-import SendBet from './components/SendBet';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
+  Route
 } from "react-router-dom";
 import Main from './Main';
 import AboutPage from './AboutPage';
@@ -21,7 +16,6 @@ import './App.css';
 
 
 class App extends Component {
-
   render() {
     return (
       <div className="ui container">

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button, ButtonGroup } from "@progress/kendo-react-buttons";
 import PropTypes from 'prop-types';
 
@@ -6,18 +6,21 @@ import './SendBet.css';
 
 
 const SendBet = ({
-  currency,
-  address,
-  disabled = false
+  onSubmit,
+  disabled=false
 }) => {
 
   const walletAddress = 'bitcoincash:qz9cq5r294syv3csh56e4jpyqrpt7gl9lcj7wveruw';
+
+  const randomInteger = () => {
+    return Math.floor(Math.random() * 9999999999) + 1;
+  }
 
   return (
     <div className="send_bet">
       {!disabled && (
         <>
-          <h1>Send {currency} to Play</h1>
+          <h1>Send BTC to Play</h1>
           <div className="send_bet_qr">
             <img src={"assets/img/temp_qr.png"} alt="QR Code" />
           </div>
@@ -34,7 +37,8 @@ const SendBet = ({
 
             <div style={{ paddingTop: '20px' }}>
               <ButtonGroup width={'100%'}>
-                <Button>OPEN IN {currency} WALLET</Button>
+                {/* <Button>OPEN IN BTC WALLET</Button> */}
+                <Button onClick={() => onSubmit("BTC", 100, "pretend_it_is_valid", randomInteger())}>PLACE BET (100)</Button>
               </ButtonGroup>
             </div>
 
@@ -45,14 +49,25 @@ const SendBet = ({
         <>
           <h1>Hand in Progress</h1>
           <div className="send_bet_qr">
-
+            <img src={"assets/img/empty_qr.png"} alt="QR Code" />
           </div>
           <div className="send_bet_btn">
-            <Button>Copy Address {address}</Button>
-          </div>
+            <div style={{width: '240px', wordWrap: 'break-word', marginTop: '5px', fontWeight: 'bold', textAlign: 'center'}}>
+              Please play your hand (see left).
+            </div>
 
-          <div className="send_bet_btn">
-            <Button>Open in {currency} Wallet</Button>
+            <div style={{ paddingTop: '20px' }}>
+              <ButtonGroup width={'100%'}>
+                <Button disabled>COPY ADDRESS</Button>
+              </ButtonGroup>
+            </div>
+
+            <div style={{ paddingTop: '20px' }}>
+              <ButtonGroup width={'100%'}>
+                <Button disabled>OPEN IN BTC WALLET</Button>
+              </ButtonGroup>
+            </div>
+
           </div>
         </>
       )}
@@ -61,8 +76,6 @@ const SendBet = ({
 };
 
 SendBet.propTypes = {
-  currency: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
   disabled: PropTypes.bool
 };
 

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import './TermsPage.css';
+
 
 class TermsPage extends Component {
   render() {
