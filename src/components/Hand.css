@@ -1,3 +1,5 @@
 .Hand {
-    background: orange;
+    justify-content: center;
+    align-items: center;
+    height: 62px;
 }

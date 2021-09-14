@@ -7,8 +7,8 @@ const Card = ({
   string
 }) => {
   return (
-    <div style={{width: '40px'}}>
-      <img src={"/assets/img/" + string + '.svg'} alt={string} width='40px' />
+    <div className='Card'>
+      <img style={{display: 'block'}} src={"/assets/img/" + string + '.svg'} alt={string} width='40px' />
     </div>
   );
 };

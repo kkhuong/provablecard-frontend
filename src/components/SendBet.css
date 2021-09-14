@@ -11,3 +11,7 @@
     border: 10px;
     border-color: white;
 }
+
+.send_bet_btn {
+    flex-direction: column;
+}

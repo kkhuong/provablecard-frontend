@@ -8,10 +8,12 @@ const Hand = ({
   cards
 }) => {
   return (
-    <div style={{display: 'flex', margin: 'auto'}} className='Hand'>
-      {cards.map((card) => {
-        return <Card string={card} />
-      })}
+    <div style={{ display: 'flex', margin: 'auto' }} className='Hand'>
+
+        {cards.map((card) => {
+          return <Card string={card} />
+        })}
+
     </div>
   );
 };
