@@ -1,3 +1,7 @@
+# Edit Config
+
+Edit the `src/config.js` file before doing anything else.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
