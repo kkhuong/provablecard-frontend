@@ -1,3 +1,4 @@
+import config from './config';
 import React, { useState } from "react";
 import SendBet from './components/SendBet';
 import Game from './components/Game';
@@ -25,7 +26,7 @@ const Main = () => {
 
   const placeBetAndStartGame = (currency, amount, address, txid) => {
     console.log("CLICKED PLAY: ", currency, amount, address, txid);
-
+    console.log("CONFIG URL:", config['API_URL']);
     const requestBody = {
       currency: currency,
       address: address,
@@ -33,8 +34,9 @@ const Main = () => {
       txid: txid
     };
     console.log("CREATING A NEW HAND", requestBody);
+
     fetch(
-      'http://localhost:8000/api/hand',
+      config['API_URL'],
       {
         method: 'POST',
         body: JSON.stringify(requestBody),
@@ -60,7 +62,7 @@ const Main = () => {
       amount: 0
     };
     fetch(
-      'http://localhost:8000/api/hand/' + handId,
+      config['API_URL'] + '/' + handId,
       {
         method: 'PUT',
         body: JSON.stringify(requestBody),
