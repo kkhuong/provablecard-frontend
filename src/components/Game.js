@@ -12,7 +12,15 @@ const Game = ({
 }) => {
 
   const dealerHand = ['As', 'Kd'];
-  const playerHand = ['3c', 'Ah'];
+  const playerHand = ['3c', '8h'];
+  const handIsInProgress = false;
+  const legalActions = ['l', 'd', 'h', 's'];
+
+
+  const actionIsAvailable = (action, legalActions) => {
+    return legalActions.includes(action);
+  }
+
   return (
     <>
       <div className="game">
@@ -24,9 +32,11 @@ const Game = ({
             <p>Dealer Must Hit Soft 17</p>
             <p>Insurance Pays 2:1</p>
           </div>
-          <div style={{ marginTop: '60px', width: '100%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontWeight: 'bold', fontSize: '14px', letterSpacing: '1px', color: 'rgba(130, 134, 142, 1)' }}>
-            <p>[send in your bet to get dealt a hand]</p>
-          </div>
+          {!handIsInProgress && (
+            <div style={{ marginTop: '60px', width: '100%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontWeight: 'bold', fontSize: '14px', letterSpacing: '1px', color: 'rgba(130, 134, 142, 1)' }}>
+              <p>[send in your bet to get dealt a hand]</p>
+            </div>
+          )}
         </div>
 
         <div style={{ position: 'absolute', bottom: 20, width: '100%', justifyContent: 'center', alignItems: 'center' }}>
@@ -37,17 +47,17 @@ const Game = ({
         <div>
           <div style={{ display: 'inline-block', marginRight: '20px' }}>
             <ButtonGroup>
-              <div style={{ margin: '2px' }}><Button>Yes</Button></div>
-              <div style={{ margin: '2px' }}><Button>No</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('y', legalActions)} primary={true}>Yes</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('n', legalActions)} primary={true}>No</Button></div>
             </ButtonGroup>
           </div>
           <div style={{ display: 'inline-block', marginLeft: '20px' }}>
             <ButtonGroup>
-              <div style={{ margin: '2px' }}><Button>Surrender</Button></div>
-              <div style={{ margin: '2px' }}><Button>Split</Button></div>
-              <div style={{ margin: '2px' }}><Button>Double</Button></div>
-              <div style={{ margin: '2px' }}><Button>Hit</Button></div>
-              <div style={{ margin: '2px' }}><Button>Stand</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('l', legalActions)} primary={true}>Surrender</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('p', legalActions)} primary={true}>Split</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('d', legalActions)} primary={true}>Double</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('h', legalActions)} primary={true}>Hit</Button></div>
+              <div style={{ margin: '2px' }}><Button disabled={!actionIsAvailable('s', legalActions)} primary={true}>Stand</Button></div>
             </ButtonGroup>
           </div>
         </div>
