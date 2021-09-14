@@ -1,12 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import SendBet from './components/SendBet';
 import Game from './components/Game';
 
 import './Main.css';
 
-const Main = ({
 
-}) => {
+const Main = ({}) => {
 
   return (
     <div style={{ width: '100%', display: 'table' }}>

@@ -1,16 +1,7 @@
 import React, { Component } from "react";
-// import {
-//   Route,
-//   NavLink,
-//   HashRouter
-// } from "react-router-dom";
-import SendBet from './components/SendBet';
-import Game from './components/Game';
-// import Home from "./Home";
-// import Rules from "./Rules";
-// import Fair from "./Fair";
 
 import './AboutPage.css';
+
 
 class AboutPage extends Component {
   render() {

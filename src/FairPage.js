@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import './FairPage.css';
+
 
 class FairPage extends Component {
   render() {

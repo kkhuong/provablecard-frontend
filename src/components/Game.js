@@ -5,6 +5,7 @@ import { Button, ButtonGroup } from "@progress/kendo-react-buttons";
 
 import './Game.css';
 
+
 const Game = ({
   currency,
   address,

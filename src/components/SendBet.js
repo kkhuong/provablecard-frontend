@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Button, ButtonGroup } from "@progress/kendo-react-buttons";
 import PropTypes from 'prop-types';
 

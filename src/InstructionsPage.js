@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import './InstructionsPage.css';
+
 
 class InstructionsPage extends Component {
   render() {
